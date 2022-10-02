@@ -40,5 +40,21 @@ namespace kathryn_klatt_p1.Services.CharacterService
             serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
             return serviceResponse;
         }
+
+        public async Task<ServiceResponse<GetCharacterDto>> UpdateCharacter(UpdateCharacterDto updatedCharacter)
+        {
+            ServiceResponse<GetCharacterDto> response = new ServiceResponse<GetCharacterDto>();
+            Character character = characters.FirstOrDefault(c => c.Id == updatedCharacter.Id);
+            character.Name = updatedCharacter.Name;
+            character.HitPoints = updatedCharacter.HitPoints;
+            character.Strength = updatedCharacter.Strength;
+            character.Defense = updatedCharacter.Defense;
+            character.Intelligence = updatedCharacter.Intelligence;
+            character.Class = updatedCharacter.Class;
+
+            response.Data = _mapper.Map<GetCharacterDto>(character);
+
+            return response;
+        }
     }
 }
