@@ -12,6 +12,7 @@ namespace kathryn_klatt_p1
         public AutoMapperProfile(){
             CreateMap<Character, GetCharacterDto>();
             CreateMap<AddCharacterDto, Character>();
+            CreateMap<UpdateCharacterDto, Character>();
         }
     }
 }
