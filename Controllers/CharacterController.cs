@@ -10,12 +10,22 @@ namespace kathryn_klatt_p1.Controllers
     [Route("api/[controller]")] // Find specific controller
     public class CharacterController : ControllerBase
     {
-        private static Character student = new Character();
+        private static List<Character> characters = new List<Character>{
+            new Character(), // The default character
+            new Character {Id = 1, Name = "Peach", Strength = 13, HitPoints = 90, Intelligence = 15} // Specifying a second character
+        };
 
-    [HttpGet]
-        public ActionResult<Character> Get()
+        [HttpGet("GetAll")] 
+            public ActionResult<List<Character>> Get()
+            {
+                return Ok(characters);
+            }
+        
+
+        [HttpGet("{id}")] // The passed in argument must be in curly braces
+        public ActionResult<Character> GetSingle(int id)
         {
-            return Ok(student);
+            return Ok(characters.FirstOrDefault(c=>c.Id == id));
         }
     }
 }

@@ -9,7 +9,7 @@ namespace kathryn_klatt_p1.Models
     {
         public int Id {get; set;}
         public string Name { get; set; } = "Toad";
-        public int HitPoints { get; set; } = 100;
+        public int HitPoints { get; set; } = 50;
         public int Strength { get; set; } = 10;
         public int Defense {get;set;}=10;
         public int Intelligence { get; set; } = 10;
