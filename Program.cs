@@ -1,3 +1,4 @@
+global using kathryn_klatt_p1.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
