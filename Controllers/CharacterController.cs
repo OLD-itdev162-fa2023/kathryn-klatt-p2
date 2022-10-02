@@ -33,6 +33,17 @@ namespace kathryn_klatt_p1.Controllers
             return Ok(await _characterService.GetCharacterById(id));
         }
 
+        [HttpDelete("{id}")] // The passed in argument must be in curly braces
+        public async Task<ActionResult<ServiceResponse<List<GetCharacterDto>>>> Delete(int id)
+        {
+            var response = await _characterService.DeleteCharacter(id);
+            if (response.Data == null)
+            {
+                return NotFound(response);
+            }
+            return Ok(response);
+        }
+
         [HttpPost]
         public async Task<ActionResult<ServiceResponse<List<GetCharacterDto>>>> AddCharacter(AddCharacterDto newCharacter){
             
