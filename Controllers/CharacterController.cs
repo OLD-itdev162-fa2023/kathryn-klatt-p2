@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using kathryn_klatt_p1.Services.CharacterService;
 
 namespace kathryn_klatt_p1.Controllers
 {
@@ -10,28 +11,31 @@ namespace kathryn_klatt_p1.Controllers
     [Route("api/[controller]")] // Find specific controller
     public class CharacterController : ControllerBase
     {
-        private static List<Character> characters = new List<Character>{
-            new Character(), // The default character
-            new Character {Id = 1, Name = "Peach", Strength = 13, HitPoints = 90, Intelligence = 15} // Specifying a second character
-        };
+
+        private readonly ICharacterService _characterService;
+/* A constructor for the CharacterController class. */
+        public CharacterController(ICharacterService characterService)
+        {
+            _characterService = characterService;
+        }
 
         [HttpGet("GetAll")] 
-            public ActionResult<List<Character>> Get()
+            public async Task<ActionResult<List<Character>>> Get()
             {
-                return Ok(characters);
+                return Ok(await _characterService.GetAllCharacters());
             }
         
 
         [HttpGet("{id}")] // The passed in argument must be in curly braces
-        public ActionResult<Character> GetSingle(int id)
+        public async Task<ActionResult<Character>> GetSingle(int id)
         {
-            return Ok(characters.FirstOrDefault(c=>c.Id == id));
+            return Ok(await _characterService.GetCharacterById(id));
         }
 
         [HttpPost]
-        public ActionResult<List<Character>> AddCharacter(Character newCharacter){
-            characters.Add(newCharacter);
-            return Ok(characters);
+        public async Task<ActionResult<List<Character>>> AddCharacter(Character newCharacter){
+            
+            return Ok(await _characterService.AddCharacter(newCharacter));
         }
     }
 }
