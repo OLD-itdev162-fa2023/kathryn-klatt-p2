@@ -8,7 +8,7 @@ import { DeleteComponent } from './delete/delete.component';
 
 const routes: Routes = [
 {path:'', component: HomepageComponent},
-{path:'character/:id', component: ReadComponent},
+{path:'Character/:id', component: ReadComponent},
 {path:'create', component: CreateComponent},
 {path:'edit', component: EditComponent},
 {path:'delete', component: DeleteComponent},
