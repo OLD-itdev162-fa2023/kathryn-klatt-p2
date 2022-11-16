@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DXOHH5wz19wGJrYGmQZDVPcKQQHJmw6yZ5Qs+Jksj0Kiibv6gPjCS9QKHCHzSQcKwH3rMUSwKsEBHTR9AJlaJQ==",
+  "dgSpecHash": "aUcCnnjFId0PyjpWoLhxwSUwFSd1Kb7ncZzS6oZfK6GTq8QazxE1uWGsGbp8Kj51Vzrr/Cz0xyuEqv8FS1nO/A==",
   "success": true,
-  "projectFilePath": "C:\\code\\ITDEV162\\kathryn-klatt-p1\\kathryn-klatt-p1.csproj",
+  "projectFilePath": "C:\\code\\ITDEV162\\kathryn-klatt-p2\\kathryn-klatt-p1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zenmy\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\zenmy\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

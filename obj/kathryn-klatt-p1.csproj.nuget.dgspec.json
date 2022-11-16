@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\code\\ITDEV162\\kathryn-klatt-p1\\kathryn-klatt-p1.csproj": {}
+    "C:\\code\\ITDEV162\\kathryn-klatt-p2\\kathryn-klatt-p1.csproj": {}
   },
   "projects": {
-    "C:\\code\\ITDEV162\\kathryn-klatt-p1\\kathryn-klatt-p1.csproj": {
+    "C:\\code\\ITDEV162\\kathryn-klatt-p2\\kathryn-klatt-p1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\code\\ITDEV162\\kathryn-klatt-p1\\kathryn-klatt-p1.csproj",
+        "projectUniqueName": "C:\\code\\ITDEV162\\kathryn-klatt-p2\\kathryn-klatt-p1.csproj",
         "projectName": "kathryn-klatt-p1",
-        "projectPath": "C:\\code\\ITDEV162\\kathryn-klatt-p1\\kathryn-klatt-p1.csproj",
+        "projectPath": "C:\\code\\ITDEV162\\kathryn-klatt-p2\\kathryn-klatt-p1.csproj",
         "packagesPath": "C:\\Users\\zenmy\\.nuget\\packages\\",
-        "outputPath": "C:\\code\\ITDEV162\\kathryn-klatt-p1\\obj\\",
+        "outputPath": "C:\\code\\ITDEV162\\kathryn-klatt-p2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\zenmy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
