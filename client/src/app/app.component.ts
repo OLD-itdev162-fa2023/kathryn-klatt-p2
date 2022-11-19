@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
-  title = 'RPG Character Creation';
+  title = 'RPG Character Builder';
   Character: any;
   constructor(private http: HttpClient){}
 
