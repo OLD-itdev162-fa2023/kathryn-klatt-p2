@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'RPG Character Builder';
   Character: any;
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient){
+    console.log(environment.production); //logs false for default environment
+  }
 
   ngOnInit(): void{
     throw new Error ('Method not implemented.');
