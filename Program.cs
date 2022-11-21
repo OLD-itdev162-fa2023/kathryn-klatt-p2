@@ -29,7 +29,7 @@ app.UseCors(policy=> policy
 .AllowAnyHeader()
 .AllowAnyMethod()
 .AllowCredentials()
-.WithOrigins("http://localhost:4200/", "https://localhost:7206/", "http://localhost:5035/")
+.WithOrigins("http://localhost:5035/", "http://localhost:4200")
 );
 
 app.UseAuthorization();

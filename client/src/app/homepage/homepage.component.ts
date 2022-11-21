@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -12,7 +13,7 @@ export class HomepageComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:7206/api/Character/GetAll').subscribe(
+    this.http.get('http://localhost:5035/api/Character/GetAll').subscribe(
       response => {this.Character = response; },
       error => {console.log(error)}
     );
