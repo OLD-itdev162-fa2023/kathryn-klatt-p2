@@ -1,5 +1,12 @@
 h1{
-margin-left: 2em;
+margin-left: 1em;
+}
+
+.create-icon{
+    border: 1px solid;
+    border-radius: 3pt;
+    padding: 5px 8px 0px 8px;
+
 }
 
 .example-spacer{
