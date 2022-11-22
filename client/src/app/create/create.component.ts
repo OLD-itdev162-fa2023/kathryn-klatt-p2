@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -7,17 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
   model: any = {}
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+    private route: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   createCharacter(){
+    this.http.post('http://localhost:5035/api/Character', this.model).subscribe(
+      response => {this.home()},
+      error => {console.log(error)}
+    );
     console.log(this.model);
   }
 
   cancel(){
-    console.log("cancel create post")
+    this.home();
+  }
+
+  home(){
+    this.route.navigate(["/"]);
   }
 
 }
