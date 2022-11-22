@@ -11,8 +11,8 @@ import { environment } from 'src/environments/environment';
 export class AppComponent implements OnInit {
   title = 'RPG Character Builder';
   Character: any;
-  constructor(private http: HttpClient){
-    console.log(environment.production); //logs false for default environment
+  constructor(){
+  //logs false for default environment
   }
 
   ngOnInit(): void{

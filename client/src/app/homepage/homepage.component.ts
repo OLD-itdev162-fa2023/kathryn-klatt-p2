@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -10,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomepageComponent implements OnInit {
   Character: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.http.get('http://localhost:5035/api/Character/GetAll').subscribe(
