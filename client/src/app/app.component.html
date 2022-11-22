@@ -1,9 +1,12 @@
 <mat-toolbar>
-    <button mat-icon-button class="example-icon" routerLink="/" aria-label="Example icon-button with home icon">
+    <a mat-icon-button class="example-icon" routerLink="/" aria-label="Example icon-button with home icon">
         <mat-icon>home</mat-icon>
-    </button>
-    <span>{{title}}</span>
+    </a>
+    <span><h1>{{title}}</h1></span>
     <span class="example-spacer"></span>
+    <a mat-icon-button class="example-icon" routerLink="/create" aria-label="New Character">
+        <mat-icon>add</mat-icon>
+    </a>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         <mat-icon>favorite</mat-icon>
     </button>
