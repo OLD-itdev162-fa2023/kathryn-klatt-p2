@@ -1,15 +1,15 @@
-<div *ngFor="let character of charList">
+<div *ngFor="let ch of charArray">
 <mat-card class="char-card" routerLink="/GetAll">
     <mat-card-header>
-        <mat-card-title>{{character.Name}}</mat-card-title>
-        <mat-card-subtitle>{{character.Class}}</mat-card-subtitle>
+        <mat-card-title>{{ch.name}}</mat-card-title>
+        <mat-card-subtitle>{{ch.class}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <ul>
-            <li>HP: {{character.summary}}</li>
-            <li>Strength: {{character.Strength}}</li>
-            <li>Defense: {{character.Defense}}</li>
-            <li>Intelligence: {{character.Intelligence}}</li>
+            <li>HP: {{ch.hitPoints}}</li>
+            <li>Strength: {{ch.strength}}</li>
+            <li>Defense: {{ch.defense}}</li>
+            <li>Intelligence: {{ch.intelligence}}</li>
         </ul>
     </mat-card-content>
 </mat-card>

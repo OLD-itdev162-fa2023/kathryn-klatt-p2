@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
 
 @Component({
@@ -7,19 +7,30 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-export class HomepageComponent implements OnInit {
+
+/* export interface Data {
+  class: string;
+  defense: any;
+  hitPoints: any;
+  id: any;
+  intelligence: any;
+  name: string;
+  strength: any;
+} */
+
+
+
+export class HomepageComponent {
+  title = 'RPG Character Builder';
   characters: any;
-  charList = [];
+  charArray = [];
 
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {   }
 
   ngOnInit(): void {
     this.http.get('http://localhost:5035/api/Character/GetAll').subscribe(
-      response => {
-        this.characters = response; //storing JSON response to character element
-        this.charList=this.characters.list; // array list created using JSON element property
-        console.log(this.charList)},
+      response => {this.characters= response;  this.charArray = this.characters.data;
+        console.log(this.characters.data)},
       error => {console.log(error)}
     );
   }
