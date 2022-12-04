@@ -1,0 +1,61 @@
+mat-card{
+    margin: 2% auto;
+    max-width: 70%;
+    background-color: hsla(39,77%,83%, 0.3);
+}
+
+a:visited{
+    color: #330805;
+}
+
+a{
+    color: #5e3901;
+}
+div{
+    margin: auto;
+}
+
+form{
+    background-color: hsla(39,77%,83%, 0.3);
+    padding: 2%;
+    max-width: 80%;
+    margin: auto;
+}
+
+mat-card-title {
+    font-family: 'Cinzel', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: 200% !important;
+}
+
+mat-card-subtitle{
+    font-family: 'Cinzel', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    font-size: medium;
+    color: wheat;
+}
+
+mat-icon{
+    margin: 20%;
+    padding: 5%;
+}
+
+.example-spacer{
+    padding: 0 3%;
+}
+
+li{
+    font-size: 120%;
+}
+
+mat-form-field{
+    font-family: 'Cinzel', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: 150%;
+    
+}
+
+mat-label{
+    font-size: 120%;
+    display: block;
+}

@@ -26,7 +26,7 @@ export class EditComponent implements OnInit {
 
   editCharacter(){
     this.http.put('http://localhost:5035/api/Character', this.model).subscribe(
-      response => {this.home();},
+      response => {this.model = response; this.home();},
       error => {console.log(error)}
     );
     console.log(this.model);

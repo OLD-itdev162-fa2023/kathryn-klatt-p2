@@ -2,12 +2,9 @@
     <mat-card class="char-card" routerLink="/{id}">
         <mat-card-header>
             <mat-card-title>{{ch.name}}</mat-card-title>
-            <a mat-icon-button class="edit-icon" routerLink="/Character/{{ch.id}}" aria-label="Edit Character" (click)="edit()">
-                <mat-icon>edit_square</mat-icon>
+            <a mat-icon-button class="delete-icon" routerLink="/" aria-label="Delete Character" (click)="delete()">
+                <mat-icon title="Delete Character">delete</mat-icon>
             </a>
-                    <a mat-icon-button class="edit-icon" routerLink="/" aria-label="Delete Character" (click)="delete()">
-                        <mat-icon>delete</mat-icon>
-                    </a>
             <mat-card-subtitle>{{ch.class}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
@@ -20,12 +17,13 @@
         </mat-card-content>
     </mat-card>
 </div>
+
 <div ng-hide="edit" class="edit-fields">
     <form #createCharacterForm="ngForm" (ngSubmit)="update()" class="post-form">
-        <mat-form-field appearance="fill" class="form-field">
-            <mat-label>Id</mat-label>
-            <input matInput type="number" name="Id" [(ngModel)]="model.id" placeholder="ID" min="0" />
-        </mat-form-field>
+        <div *ngIf="ch"><mat-form-field appearance="fill" class="form-field" readonly="true">
+            <mat-label>Edit Character</mat-label>
+            <input matInput name="name" value={{ch.id}} [(ngModel)]="model.id" placeholder="{{ch.id}}" readonly="true"/>
+        </mat-form-field></div>
         <mat-form-field appearance="fill" class="form-field">
             <mat-label>Name</mat-label>
             <input matInput name="name" [(ngModel)]="model.name" placeholder="Name" />
@@ -59,7 +57,7 @@
             </mat-select>
         </mat-form-field>
         <div class="form-field">
-            <button mat-raised-button color="aliceblue" type="submit" class="form-button" (click)="home()">Update Character</button>
+            <button mat-raised-button color="aliceblue" type="submit" class="form-button" (click)="update()">Update Character</button>
             <button mat-raised-button color="red" type="button" class="form-button" ng-model="edit">Cancel</button>
         </div>
     </form>

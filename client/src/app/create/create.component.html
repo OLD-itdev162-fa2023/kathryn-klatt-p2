@@ -1,9 +1,5 @@
 <form #createCharacterForm="ngForm" (ngSubmit)="createCharacter()" class="post-form">
     <mat-form-field appearance="fill" class="form-field">
-        <mat-label>Id</mat-label>
-        <input matInput type="number" name="Id" [(ngModel)]="model.id" placeholder="ID" min="0"/>
-    </mat-form-field>
-    <mat-form-field appearance="fill" class="form-field">
         <mat-label>Name</mat-label>
         <input matInput name="name" [(ngModel)]="model.name" placeholder="Name"/>
     </mat-form-field>
@@ -35,5 +31,6 @@
     </mat-form-field>
     <div class="form-field">
         <button mat-raised-button color="aliceblue" type="submit" class="form-button">Create Character</button>
+        <span class="example-spacer"></span>
         <button mat-raised-button color="red" type="button" class="form-button" (click)="cancel()">Cancel</button>
     </div>

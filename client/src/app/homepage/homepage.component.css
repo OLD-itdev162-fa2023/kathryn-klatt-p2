@@ -10,4 +10,26 @@ a:visited{
 
 a{
     color: #5e3901;
+    text-decoration-line: none;
+}
+div{
+    margin: auto;
+}
+
+mat-card-title {
+    font-family: 'Cinzel', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: 200% !important;
+    
+}
+
+mat-card-title:hover{
+cursor: pointer;
+}
+
+mat-card-subtitle{
+    font-family: 'Cinzel', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    font-size: medium;
+    color: wheat;
 }

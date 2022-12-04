@@ -15,12 +15,12 @@ export class ReadComponent implements OnInit {
   ch = [];
   model: any = {};
   id = 0;
+  result: any;
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.getPost();
-    this.update();
   }
 
   getPost(){
@@ -32,11 +32,19 @@ export class ReadComponent implements OnInit {
   }
 
   update(){
-    this.http.put(`http://localhost:5035/api/Character/${this.id}`, this.model).subscribe(
-      response => {this.home()},
+    this.http.put('http://localhost:5035/api/Character/', this.model).subscribe(
+      response => {this.model = response; this.home()},
       error => {console.log(error)}
     );
     console.log(this.model);
+  }
+
+  delete(){
+      this.http.delete(`http://localhost:5035/api/Character/${this.characters.data.id}`, this.model).subscribe(
+      response => {this.result = response; this.home()},
+      error => {console.log(error)}
+    );
+    console.log(this.result);
   }
 
     home(){
