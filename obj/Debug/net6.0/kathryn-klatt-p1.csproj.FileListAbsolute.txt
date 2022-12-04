@@ -62,3 +62,5 @@ C:\code\ITDEV162\kathryn-klatt-p2\obj\Debug\net6.0\refint\kathryn-klatt-p1.dll
 C:\code\ITDEV162\kathryn-klatt-p2\obj\Debug\net6.0\kathryn-klatt-p1.pdb
 C:\code\ITDEV162\kathryn-klatt-p2\obj\Debug\net6.0\kathryn-klatt-p1.genruntimeconfig.cache
 C:\code\ITDEV162\kathryn-klatt-p2\obj\Debug\net6.0\ref\kathryn-klatt-p1.dll
+C:\code\ITDEV162\kathryn-klatt-p2\bin\Debug\net6.0\package-lock.json
+C:\code\ITDEV162\kathryn-klatt-p2\bin\Debug\net6.0\package.json

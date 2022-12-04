@@ -8,11 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  model: any = {}
-  constructor(
-    private http: HttpClient,
-    private route: Router
-  ) { }
+  title = 'Create a Character';
+  model: any = {};
+
+  constructor(private http: HttpClient, private route: Router) { }
 
   ngOnInit(): void {
   }

@@ -1,15 +1,15 @@
-<div *ngFor="let post of posts">
-<mat-card class="char-card" routerLink="/posts/{{post.id}}">
+<div *ngFor="let ch of charArray">
+<mat-card class="char-card" routerLink="/GetAll">
     <mat-card-header>
-        <mat-card-title>{{post.Name}}</mat-card-title>
-        <mat-card-subtitle>{{post.Class}}</mat-card-subtitle>
+        <mat-card-title><a routerLink="/Character/{{ch.id}}">{{ch.name}}</a></mat-card-title>
+        <mat-card-subtitle>{{ch.class}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <ul>
-            <li>HP: {{post.HitPoints}}</li>
-            <li>Strength: {{post.Strength}}</li>
-            <li>Defense: {{post.Defense}}</li>
-            <li>Intelligence: {{post.Intelligence}}</li>
+            <li>HP: {{ch.hitPoints}}</li>
+            <li>Strength: {{ch.strength}}</li>
+            <li>Defense: {{ch.defense}}</li>
+            <li>Intelligence: {{ch.intelligence}}</li>
         </ul>
     </mat-card-content>
 </mat-card>
