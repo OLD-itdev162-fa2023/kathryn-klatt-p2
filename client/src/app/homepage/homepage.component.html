@@ -1,7 +1,7 @@
 <div *ngFor="let ch of charArray">
 <mat-card class="char-card" routerLink="/GetAll">
     <mat-card-header>
-        <mat-card-title>{{ch.name}}</mat-card-title>
+        <mat-card-title><a routerLink="/Character/{{ch.id}}">{{ch.name}}</a></mat-card-title>
         <mat-card-subtitle>{{ch.class}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>

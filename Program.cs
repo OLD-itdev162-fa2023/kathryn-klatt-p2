@@ -24,15 +24,13 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
-
+app.UseAuthorization();
 app.UseCors(policy=> policy
 .AllowAnyHeader()
 .AllowAnyMethod()
 .AllowCredentials()
 .WithOrigins("http://localhost:5035/", "http://localhost:4200")
 );
-
-app.UseAuthorization();
 
 app.MapControllers();
 

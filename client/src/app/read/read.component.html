@@ -1,14 +1,66 @@
-<mat-card class="char-card">
-    <mat-card-header>
-        <mat-card-title>{{post.Name}}</mat-card-title>
-        <mat-card-subtitle>{{post.Class}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-        <ul>
-            <li>HP: {{post.HitPoints}}</li>
-            <li>Strength: {{post.Strength}}</li>
-            <li>Defense: {{post.Defense}}</li>
-            <li>Intelligence: {{post.Intelligence}}</li>
-        </ul>
-    </mat-card-content>
-</mat-card>
+<div *ngIf="ch"> <!-- If the variable ch exists, then... -->
+    <mat-card class="char-card" routerLink="/{id}">
+        <mat-card-header>
+            <mat-card-title>{{ch.name}}</mat-card-title>
+            <a mat-icon-button class="edit-icon" routerLink="/Character/{{ch.id}}" aria-label="Edit Character" (click)="edit()">
+                <mat-icon>edit_square</mat-icon>
+            </a>
+                    <a mat-icon-button class="edit-icon" routerLink="/" aria-label="Delete Character" (click)="delete()">
+                        <mat-icon>delete</mat-icon>
+                    </a>
+            <mat-card-subtitle>{{ch.class}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <ul>
+                <li>HP: {{ch.hitPoints}}</li>
+                <li>Strength: {{ch.strength}}</li>
+                <li>Defense: {{ch.defense}}</li>
+                <li>Intelligence: {{ch.intelligence}}</li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+</div>
+<div ng-hide="edit" class="edit-fields">
+    <form #createCharacterForm="ngForm" (ngSubmit)="update()" class="post-form">
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Id</mat-label>
+            <input matInput type="number" name="Id" [(ngModel)]="model.id" placeholder="ID" min="0" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Name</mat-label>
+            <input matInput name="name" [(ngModel)]="model.name" placeholder="Name" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Hit Points</mat-label>
+            <input matInput type="number" name="hitPoints" [(ngModel)]="model.hitPoints" placeholder="0" min="1"
+                max="100" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Strength</mat-label>
+            <input matInput type="number" name="Strength" [(ngModel)]="model.strength" placeholder="0" min="0" max="20" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Defense</mat-label>
+            <input matInput type="number" name="Defense" [(ngModel)]="model.defense" placeholder="0" min="0" max="20" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Intelligence</mat-label>
+            <input matInput type="number" name="Intelligence" [(ngModel)]="model.intelligence" placeholder="0" min="0"
+                max="20" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Class</mat-label>
+            <mat-select [(ngModel)]="model.Class" name="class">
+                <mat-option value="1">Plumber</mat-option>
+                <mat-option value="2">Cop</mat-option>
+                <mat-option value="3">Catlady</mat-option>
+                <mat-option value="4">Mechanic</mat-option>
+                <mat-option value="5">Student</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="form-field">
+            <button mat-raised-button color="aliceblue" type="submit" class="form-button" (click)="home()">Update Character</button>
+            <button mat-raised-button color="red" type="button" class="form-button" ng-model="edit">Cancel</button>
+        </div>
+    </form>
+</div>
